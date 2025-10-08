@@ -1,18 +1,3 @@
-// Fungsi untuk mengatur ulang form
-function resetForm() {
-    // Mendefinisikan nama-nama field yang ada di form
-    const formFields = ['name', 'email', 'message'];
-    // Mengosongkan nilai setiap field
-    formFields.forEach(field => document.getElementById(field).value = '');
-
-    // Mengambil elemen form feedback
-    const feedbackForm = document.getElementById('feedback-form');
-    // Menambahkan kelas 'active' untuk menampilkan form
-    feedbackForm.classList.add('active');
-    // Memicu reflow untuk efek animasi
-    void feedbackForm.offsetHeight;
-}
-
 // Fungsi untuk menangani pengiriman form
 function handleSubmit() {
     // Menampilkan notifikasi sukses menggunakan SweetAlert
@@ -30,6 +15,21 @@ function handleSubmit() {
 
     // Mengembalikan false untuk mencegah pengiriman form secara default
     return false;
+}
+
+// Fungsi untuk mengatur ulang form
+function resetForm() {
+    // Mendefinisikan nama-nama field yang ada di form
+    const formFields = ['name', 'email', 'message'];
+    // Mengosongkan nilai setiap field
+    formFields.forEach(field => document.getElementById(field).value = '');
+
+    // Mengambil elemen form feedback
+    const feedbackForm = document.getElementById('feedback-form');
+    // Menambahkan kelas 'active' untuk menampilkan form
+    feedbackForm.classList.add('active');
+    // Memicu reflow untuk efek animasi
+    void feedbackForm.offsetHeight;
 }
 
 // Event listener untuk menjalankan kode saat DOM sepenuhnya dimuat
